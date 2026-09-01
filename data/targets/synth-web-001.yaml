@@ -1,0 +1,23 @@
+# data/targets/synth-web-001.yaml
+system_id: "SYNTH-WEB-001"
+system_name: "Synthetic Web Server"
+os: "Ubuntu 22.04 LTS"
+environment: "development"
+password_authentication:
+  compromised_password_screening:
+    enabled: true
+    update_frequency: "monthly and upon suspected compromise"
+    check_on_create_or_update: true
+  transport:
+    cryptographically_protected: true
+  storage:
+    salted_key_derivation_function: true
+    keyed_hash_preferred: true
+  account_recovery:
+    require_new_password: true
+  password_selection:
+    allow_long_passwords_and_passphrases: true
+    allow_spaces_and_printable_characters: true
+    strength_assistance_enabled: true
+  organization_defined_composition_rules:
+    documented: true

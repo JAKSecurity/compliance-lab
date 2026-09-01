@@ -1,0 +1,130 @@
+[
+  {
+    "phase": "load_target",
+    "timestamp": "2026-04-12T14:00:00.000Z",
+    "active_node": "load_target",
+    "active_agent": null,
+    "authz_decision": null,
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "target_data": {
+        "system_id": "SYNTH-WEB-001",
+        "system_name": "Synthetic Web Server",
+        "os": "Ubuntu 22.04 LTS",
+        "environment": "development"
+      }
+    },
+    "audit_entries": []
+  },
+  {
+    "phase": "check_phase",
+    "timestamp": "2026-04-12T14:00:01.200Z",
+    "active_node": "check_phase",
+    "active_agent": "validator",
+    "authz_decision": {
+      "agent_id": "validator",
+      "action": "control_check",
+      "resource": "synth-web-001",
+      "allowed": true,
+      "reason": "Policy allows action"
+    },
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "check_authz_allowed": true,
+      "check_authz_reason": "Policy allows action",
+      "finding": "PASS",
+      "evidence": "The synthetic target screens new passwords against a compromised-password list, uses protected transport and salted key derivation, forces a new password after account recovery, permits long passphrases, and provides password-strength assistance."
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"PASS\", \"evidence\": \"The synthetic target screens new passwords against a compromised-password list, uses protected transport and salted key derivation, forces a new password after account recovery, permits long passphrases, and provides password-strength assistance.\"}",
+        "signature_present": true,
+        "entry_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  {
+    "phase": "report_phase",
+    "timestamp": "2026-04-12T14:00:04.800Z",
+    "active_node": "report_phase",
+    "active_agent": "reporter",
+    "authz_decision": {
+      "agent_id": "reporter",
+      "action": "generate_report",
+      "resource": "synth-web-001",
+      "allowed": true,
+      "reason": "Policy allows action"
+    },
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "check_authz_allowed": true,
+      "finding": "PASS",
+      "evidence": "The synthetic target screens new passwords against a compromised-password list, uses protected transport and salted key derivation, forces a new password after account recovery, permits long passphrases, and provides password-strength assistance.",
+      "report_authz_allowed": true,
+      "report_authz_reason": "Policy allows action",
+      "report_summary": "The synthetic configuration represents each modeled element of the IA-5(1) password-based authentication statement.",
+      "report_recommendation": "No simulated action is proposed. Review organization-defined parameters before using the control in an assessment context."
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"PASS\", \"evidence\": \"The synthetic target screens new passwords against a compromised-password list, uses protected transport and salted key derivation, forces a new password after account recovery, permits long passphrases, and provides password-strength assistance.\"}",
+        "signature_present": true,
+        "entry_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) PASSES for SYNTH-WEB-001.\", \"recommendation\": \"No action needed.\"}",
+        "signature_present": true,
+        "entry_hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+        "previous_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+      }
+    ]
+  },
+  {
+    "phase": "complete",
+    "timestamp": "2026-04-12T14:00:05.000Z",
+    "active_node": null,
+    "active_agent": null,
+    "authz_decision": null,
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "finding": "PASS",
+      "report_summary": "The synthetic configuration represents each modeled element of the IA-5(1) password-based authentication statement.",
+      "report_recommendation": "No simulated action is proposed. Review organization-defined parameters before using the control in an assessment context."
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"PASS\", \"evidence\": \"The synthetic target screens new passwords against a compromised-password list, uses protected transport and salted key derivation, forces a new password after account recovery, permits long passphrases, and provides password-strength assistance.\"}",
+        "signature_present": true,
+        "entry_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) PASSES for SYNTH-WEB-001.\", \"recommendation\": \"No action needed.\"}",
+        "signature_present": true,
+        "entry_hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+        "previous_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+      }
+    ]
+  }
+]

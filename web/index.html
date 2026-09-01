@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance Lab — Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Compliance Lab <span>Dashboard</span></h1>
+    <div id="connection-status" class="badge pending">Static Replay</div>
+  </header>
+
+  <!-- Controls bar -->
+  <div class="controls-bar">
+    <select id="path-select">
+      <option value="demo-pass">PASS Path</option>
+      <option value="demo-fail" selected>FAIL Path (with containment)</option>
+    </select>
+    <button id="btn-prev" title="Previous step">&larr;</button>
+    <button id="btn-play" title="Play / Pause">Play</button>
+    <button id="btn-next" title="Next step">&rarr;</button>
+    <span id="step-label" class="step-label">0 / 0</span>
+  </div>
+
+  <!-- Main grid -->
+  <div class="main-grid">
+
+    <!-- Left: Workflow DAG -->
+    <aside class="panel-dag">
+      <h2>Workflow</h2>
+      <div id="dag-nodes"></div>
+    </aside>
+
+    <!-- Center: Phase detail -->
+    <main class="panel-center" id="center-panel">
+      <div class="empty-state">Select a path and press Play to begin.</div>
+    </main>
+
+    <!-- Right: Audit trail -->
+    <aside class="panel-audit">
+      <h2>Audit Trail</h2>
+      <div id="audit-entries"></div>
+    </aside>
+
+    <!-- Bottom: Agent identities -->
+    <footer class="panel-agents" id="agent-bar"></footer>
+
+  </div>
+
+  <!-- Containment modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h2>&#9888; Human Approval Required</h2>
+      <div id="modal-body"></div>
+      <div class="modal-buttons">
+        <button class="btn btn-approve" id="btn-approve">Approve</button>
+        <button class="btn btn-deny" id="btn-deny">Deny</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

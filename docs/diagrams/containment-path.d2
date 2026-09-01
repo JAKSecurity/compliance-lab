@@ -1,0 +1,84 @@
+...@theme
+
+# FAIL path: a human decision gates a simulated containment outcome.
+# No host, account, or network resource is changed.
+
+direction: down
+
+p1: Phase 1 — Control Check {
+  class: panel
+  direction: right
+
+  validator: Validator Agent {
+    class: agent
+  }
+  authz: PDP authorizes\ncontrol_check {
+    class: auth
+  }
+  evaluate: Retrieve control and\nevaluate synthetic target {
+    class: llm
+  }
+  audit: Audit entry\nhash chained, signature attached {
+    class: data
+  }
+
+  validator -> authz: 1. request
+  authz -> evaluate: 2. allowed
+  evaluate -> audit: 3. FAIL + evidence
+}
+
+p2: Phase 2 — Report and Proposal {
+  class: panel
+  direction: right
+
+  reporter: Reporter Agent {
+    class: agent
+  }
+  authz: PDP authorizes\ngenerate_report {
+    class: auth
+  }
+  propose: Summarize finding and\npropose simulated containment {
+    class: llm
+  }
+  audit: Audit entry\nhash chained, signature attached {
+    class: data
+  }
+
+  reporter -> authz: 5. request
+  authz -> propose: 6. allowed
+  propose -> audit: 7. report + proposal
+}
+
+p3: Phase 3 — Human Gate {
+  class: panel
+  direction: right
+
+  human: Human Approver {
+    class: user
+  }
+  authz: PDP authorizes\napprove_containment {
+    class: auth
+  }
+  gate: Approve\nor Deny? {
+    class: auth
+  }
+  simulated: Simulation\nrecorded {
+    class: success
+  }
+  denied: Proposal\ndenied {
+    class: auth
+  }
+  audit: Audit entry\nhash chained, signature attached {
+    class: data
+  }
+
+  human -> authz: 9. request
+  authz -> gate: 10. allowed
+  gate -> simulated: approve
+  gate -> denied: deny
+  simulated -> audit: record approval
+  denied -> audit: record denial
+}
+
+p1.audit -> p2.reporter: 4. hand off finding
+p2.audit -> p3.human: 8. request decision

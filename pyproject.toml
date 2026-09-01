@@ -1,0 +1,44 @@
+[project]
+name = "compliance-lab"
+version = "0.4.0"
+description = "Multi-agent RMF control validation with inter-agent identity, authorization, and audit"
+license = "MIT"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "langgraph>=0.4",
+    "langchain-ollama>=0.3",
+    "autogen-agentchat>=0.4",
+    "autogen-ext[openai]>=0.4",
+    "cryptography>=44.0",
+    "pyyaml>=6.0",
+    "llama-index-core>=0.12",
+    "llama-index-vector-stores-qdrant>=0.6",
+    "llama-index-embeddings-ollama>=0.5",
+    "qdrant-client>=1.13",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+web = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.25",
+    "ruff>=0.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

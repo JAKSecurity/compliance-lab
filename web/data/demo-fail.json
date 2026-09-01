@@ -1,0 +1,250 @@
+[
+  {
+    "phase": "load_target",
+    "timestamp": "2026-04-12T14:00:00.000Z",
+    "active_node": "load_target",
+    "active_agent": null,
+    "authz_decision": null,
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "target_data": {
+        "system_id": "SYNTH-WEB-001",
+        "system_name": "Synthetic Web Server",
+        "os": "Ubuntu 22.04 LTS",
+        "environment": "development"
+      }
+    },
+    "audit_entries": []
+  },
+  {
+    "phase": "check_phase",
+    "timestamp": "2026-04-12T14:00:01.200Z",
+    "active_node": "check_phase",
+    "active_agent": "validator",
+    "authz_decision": {
+      "agent_id": "validator",
+      "action": "control_check",
+      "resource": "synth-web-001",
+      "allowed": true,
+      "reason": "Policy allows action"
+    },
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "check_authz_allowed": true,
+      "check_authz_reason": "Policy allows action",
+      "finding": "FAIL",
+      "evidence": "The synthetic target does not screen new passwords against a compromised-password list, stores passwords with an unsalted hash, and does not force a new password after account recovery."
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"FAIL\", \"evidence\": \"Compromised-password screening is absent, password storage uses an unsalted hash, and account recovery does not force a new password.\"}",
+        "signature_present": true,
+        "entry_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  {
+    "phase": "report_phase",
+    "timestamp": "2026-04-12T14:00:04.800Z",
+    "active_node": "report_phase",
+    "active_agent": "reporter",
+    "authz_decision": {
+      "agent_id": "reporter",
+      "action": "generate_report",
+      "resource": "synth-web-001",
+      "allowed": true,
+      "reason": "Policy allows action"
+    },
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "check_authz_allowed": true,
+      "finding": "FAIL",
+      "evidence": "The synthetic target does not screen new passwords against a compromised-password list, stores passwords with an unsalted hash, and does not force a new password after account recovery.",
+      "report_authz_allowed": true,
+      "report_authz_reason": "Policy allows action",
+      "report_summary": "The synthetic configuration does not represent the compromised-password screening, protected storage, and account-recovery elements of IA-5(1).",
+      "report_recommendation": "Add compromised-password screening, approved salted key derivation, protected transport, and a forced password change after account recovery.",
+      "containment_action": "Simulate disabling password-based login on SYNTH-WEB-001 pending remediation",
+      "containment_justification": "The synthetic target omits several modeled IA-5(1) protections; the proposed containment is a demonstration and makes no system change."
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"FAIL\", \"evidence\": \"Compromised-password screening is absent, password storage uses an unsalted hash, and account recovery does not force a new password.\"}",
+        "signature_present": true,
+        "entry_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) FAILS for SYNTH-WEB-001.\", \"recommendation\": \"Correct the modeled IA-5(1) gaps.\"}",
+        "signature_present": true,
+        "entry_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+        "previous_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+      }
+    ]
+  },
+  {
+    "phase": "containment_phase",
+    "timestamp": "2026-04-12T14:00:06.000Z",
+    "active_node": "containment_phase",
+    "active_agent": "human",
+    "authz_decision": {
+      "agent_id": "human",
+      "action": "approve_containment",
+      "resource": "synth-web-001",
+      "allowed": true,
+      "reason": "Policy allows action"
+    },
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "finding": "FAIL",
+      "evidence": "The synthetic target does not screen new passwords against a compromised-password list, stores passwords with an unsalted hash, and does not force a new password after account recovery.",
+      "report_summary": "The synthetic configuration does not represent the compromised-password screening, protected storage, and account-recovery elements of IA-5(1).",
+      "containment_action": "Simulate disabling password-based login on SYNTH-WEB-001 pending remediation",
+      "containment_justification": "The synthetic target omits several modeled IA-5(1) protections; the proposed containment is a demonstration and makes no system change.",
+      "awaiting_human_approval": true
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"FAIL\", \"evidence\": \"Compromised-password screening is absent, password storage uses an unsalted hash, and account recovery does not force a new password.\"}",
+        "signature_present": true,
+        "entry_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) FAILS for SYNTH-WEB-001.\", \"recommendation\": \"Correct the modeled IA-5(1) gaps.\"}",
+        "signature_present": true,
+        "entry_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+        "previous_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+      }
+    ]
+  },
+  {
+    "phase": "containment_approved",
+    "timestamp": "2026-04-12T14:00:10.500Z",
+    "active_node": "execute_containment",
+    "active_agent": "validator",
+    "authz_decision": null,
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "finding": "FAIL",
+      "containment_action": "Simulate disabling password-based login on SYNTH-WEB-001 pending remediation",
+      "containment_approved": true,
+      "containment_approval_reason": "Human approved",
+      "containment_executed": true
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"FAIL\", \"evidence\": \"Compromised-password screening is absent, password storage uses an unsalted hash, and account recovery does not force a new password.\"}",
+        "signature_present": true,
+        "entry_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) FAILS for SYNTH-WEB-001.\", \"recommendation\": \"Correct the modeled IA-5(1) gaps.\"}",
+        "signature_present": true,
+        "entry_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+        "previous_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+      },
+      {
+        "agent_id": "human",
+        "action": "approve_containment",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"containment_action\": \"Simulate disabling password-based login on SYNTH-WEB-001 pending remediation\", \"approved\": true}",
+        "signature_present": true,
+        "entry_hash": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6",
+        "previous_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5"
+      },
+      {
+        "agent_id": "validator",
+        "action": "execute_containment",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"containment_action\": \"Simulate disabling password-based login on SYNTH-WEB-001 pending remediation\", \"simulated\": true}",
+        "signature_present": true,
+        "entry_hash": "f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1",
+        "previous_hash": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+      }
+    ]
+  },
+  {
+    "phase": "complete",
+    "timestamp": "2026-04-12T14:00:11.000Z",
+    "active_node": null,
+    "active_agent": null,
+    "authz_decision": null,
+    "workflow_state": {
+      "control_id": "IA-5(1)",
+      "target_id": "synth-web-001",
+      "finding": "FAIL",
+      "report_summary": "The synthetic configuration does not represent the compromised-password screening, protected storage, and account-recovery elements of IA-5(1).",
+      "report_recommendation": "Add compromised-password screening, approved salted key derivation, protected transport, and a forced password change after account recovery.",
+      "containment_action": "Simulate disabling password-based login on SYNTH-WEB-001 pending remediation",
+      "containment_approved": true,
+      "containment_executed": true
+    },
+    "audit_entries": [
+      {
+        "agent_id": "validator",
+        "action": "control_check",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"finding\": \"FAIL\", \"evidence\": \"Compromised-password screening is absent, password storage uses an unsalted hash, and account recovery does not force a new password.\"}",
+        "signature_present": true,
+        "entry_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "agent_id": "reporter",
+        "action": "generate_report",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"summary\": \"Control IA-5(1) FAILS for SYNTH-WEB-001.\", \"recommendation\": \"Correct the modeled IA-5(1) gaps.\"}",
+        "signature_present": true,
+        "entry_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+        "previous_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+      },
+      {
+        "agent_id": "human",
+        "action": "approve_containment",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"containment_action\": \"Simulate disabling password-based login on SYNTH-WEB-001 pending remediation\", \"approved\": true}",
+        "signature_present": true,
+        "entry_hash": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6",
+        "previous_hash": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5"
+      },
+      {
+        "agent_id": "validator",
+        "action": "execute_containment",
+        "resource": "synth-web-001",
+        "detail": "{\"control_id\": \"IA-5(1)\", \"containment_action\": \"Simulate disabling password-based login on SYNTH-WEB-001 pending remediation\", \"simulated\": true}",
+        "signature_present": true,
+        "entry_hash": "f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1",
+        "previous_hash": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+      }
+    ]
+  }
+]

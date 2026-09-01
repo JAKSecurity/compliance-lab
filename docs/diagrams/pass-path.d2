@@ -1,0 +1,56 @@
+...@theme
+
+# PASS path: each role-scoped action passes through the in-process PDP.
+# Audit entries are hash-chained during the process run and carry signatures.
+
+direction: down
+
+validator: Validator Agent {
+  class: agent
+}
+
+check_authz: PDP authorizes\ncontrol_check {
+  class: auth
+}
+
+control: Retrieve IA-5(1)\nfrom in-memory Qdrant {
+  class: data
+}
+
+evaluate: Ollama evaluates\ncontrol vs. synthetic target {
+  class: llm
+}
+
+check_audit: Audit entry\nhash chained, signature attached {
+  class: data
+}
+
+reporter: Reporter Agent {
+  class: agent
+}
+
+report_authz: PDP authorizes\ngenerate_report {
+  class: auth
+}
+
+summarize: Ollama summarizes\nfinding and evidence {
+  class: llm
+}
+
+report_audit: Audit entry\nhash chained, signature attached {
+  class: data
+}
+
+complete: PASS\nNo containment proposal {
+  class: success
+}
+
+validator -> check_authz: 1. request
+check_authz -> control: 2. allowed
+control -> evaluate: 3. statement + target
+evaluate -> check_audit: 4. PASS + evidence
+check_audit -> reporter: 5. hand off finding
+reporter -> report_authz: 6. request
+report_authz -> summarize: 7. allowed
+summarize -> report_audit: 8. report
+report_audit -> complete: 9. complete

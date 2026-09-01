@@ -1,0 +1,244 @@
+# Generated from pinned official NIST OSCAL content. Do not edit by hand.
+source:
+  title: Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment
+    Procedures
+  tag: v1.4.0
+  commit: bc8a528770033611df899b3d52703fb3dc91a20d
+  catalog_version: 5.2.0
+  oscal_version: 1.1.3
+  last_modified: '2025-08-26T14:33:16.00000-00:00'
+  url: https://github.com/usnistgov/oscal-content/blob/v1.4.0/src/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml
+  sha256: 341f7dd2636b89b6d54b51fcf090e4cd18459b9e4ef4798f854f1a918023a650
+  license: NIST public domain and CC0-1.0
+  transformation: Statement text extracted by scripts/build_control_subset.py
+controls:
+- id: AC-1
+  oscal_id: ac-1
+  family: Access Control
+  title: Policy and Procedures
+  text: |-
+    Control: AC-1 — Policy and Procedures.
+    a. Develop, document, and disseminate to [organization-defined parameter: organization-defined personnel or roles]:
+    1. [organization-defined parameter: one or more of: organization-level; mission/business process-level; system-level] access control policy that:
+    (a) Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and
+    (b) Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and
+    2. Procedures to facilitate the implementation of the access control policy and the associated access controls;
+    b. Designate an [organization-defined parameter: official] to manage the development, documentation, and dissemination of the access control policy and procedures; and
+    c. Review and update the current access control:
+    1. Policy [organization-defined parameter: frequency] and following [organization-defined parameter: events] ; and
+    2. Procedures [organization-defined parameter: frequency] and following [organization-defined parameter: events].
+- id: AC-2
+  oscal_id: ac-2
+  family: Access Control
+  title: Account Management
+  text: |-
+    Control: AC-2 — Account Management.
+    a. Define and document the types of accounts allowed and specifically prohibited for use within the system;
+    b. Assign account managers;
+    c. Require [organization-defined parameter: prerequisites and criteria] for group and role membership;
+    d. Specify:
+    1. Authorized users of the system;
+    2. Group and role membership; and
+    3. Access authorizations (i.e., privileges) and [organization-defined parameter: attributes (as required)] for each account;
+    e. Require approvals by [organization-defined parameter: personnel or roles] for requests to create accounts;
+    f. Create, enable, modify, disable, and remove accounts in accordance with [organization-defined parameter: policy, procedures, prerequisites, and criteria];
+    g. Monitor the use of accounts;
+    h. Notify account managers and [organization-defined parameter: personnel or roles] within:
+    1. [organization-defined parameter: time period] when accounts are no longer required;
+    2. [organization-defined parameter: time period] when users are terminated or transferred; and
+    3. [organization-defined parameter: time period] when system usage or need-to-know changes for an individual;
+    i. Authorize access to the system based on:
+    1. A valid access authorization;
+    2. Intended system usage; and
+    3. [organization-defined parameter: attributes (as required)];
+    j. Review accounts for compliance with account management requirements [organization-defined parameter: frequency];
+    k. Establish and implement a process for changing shared or group account authenticators (if deployed) when individuals are removed from the group; and
+    l. Align account management processes with personnel termination and transfer processes.
+- id: AC-3
+  oscal_id: ac-3
+  family: Access Control
+  title: Access Enforcement
+  text: |-
+    Control: AC-3 — Access Enforcement.
+    Enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.
+- id: AC-6
+  oscal_id: ac-6
+  family: Access Control
+  title: Least Privilege
+  text: |-
+    Control: AC-6 — Least Privilege.
+    Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks.
+- id: AC-7
+  oscal_id: ac-7
+  family: Access Control
+  title: Unsuccessful Logon Attempts
+  text: |-
+    Control: AC-7 — Unsuccessful Logon Attempts.
+    a. Enforce a limit of [organization-defined parameter: number] consecutive invalid logon attempts by a user during a [organization-defined parameter: time period] ; and
+    b. Automatically [organization-defined parameter: one or more of: lock the account or node for [organization-defined parameter: time period]; lock the account or node until released by an administrator; delay next logon prompt per [organization-defined parameter: delay algorithm]; notify system administrator; take other [organization-defined parameter: action]] when the maximum number of unsuccessful attempts is exceeded.
+- id: IA-1
+  oscal_id: ia-1
+  family: Identification and Authentication
+  title: Policy and Procedures
+  text: |-
+    Control: IA-1 — Policy and Procedures.
+    a. Develop, document, and disseminate to [organization-defined parameter: organization-defined personnel or roles]:
+    1. [organization-defined parameter: one or more of: organization-level; mission/business process-level; system-level] identification and authentication policy that:
+    (a) Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and
+    (b) Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and
+    2. Procedures to facilitate the implementation of the identification and authentication policy and the associated identification and authentication controls;
+    b. Designate an [organization-defined parameter: official] to manage the development, documentation, and dissemination of the identification and authentication policy and procedures; and
+    c. Review and update the current identification and authentication:
+    1. Policy [organization-defined parameter: frequency] and following [organization-defined parameter: events] ; and
+    2. Procedures [organization-defined parameter: frequency] and following [organization-defined parameter: events].
+- id: IA-2
+  oscal_id: ia-2
+  family: Identification and Authentication
+  title: Identification and Authentication (Organizational Users)
+  text: |-
+    Control: IA-2 — Identification and Authentication (Organizational Users).
+    Uniquely identify and authenticate organizational users and associate that unique identification with processes acting on behalf of those users.
+- id: IA-2(1)
+  oscal_id: ia-2.1
+  family: Identification and Authentication
+  title: Multi-factor Authentication to Privileged Accounts
+  text: |-
+    Control: IA-2(1) — Multi-factor Authentication to Privileged Accounts.
+    Implement multi-factor authentication for access to privileged accounts.
+- id: IA-2(2)
+  oscal_id: ia-2.2
+  family: Identification and Authentication
+  title: Multi-factor Authentication to Non-privileged Accounts
+  text: |-
+    Control: IA-2(2) — Multi-factor Authentication to Non-privileged Accounts.
+    Implement multi-factor authentication for access to non-privileged accounts.
+- id: IA-5
+  oscal_id: ia-5
+  family: Identification and Authentication
+  title: Authenticator Management
+  text: |-
+    Control: IA-5 — Authenticator Management.
+    Manage system authenticators by:
+    a. Verifying, as part of the initial authenticator distribution, the identity of the individual, group, role, service, or device receiving the authenticator;
+    b. Establishing initial authenticator content for any authenticators issued by the organization;
+    c. Ensuring that authenticators have sufficient strength of mechanism for their intended use;
+    d. Establishing and implementing administrative procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators;
+    e. Changing default authenticators prior to first use;
+    f. Changing or refreshing authenticators [organization-defined parameter: time period by authenticator type] or when [organization-defined parameter: events] occur;
+    g. Protecting authenticator content from unauthorized disclosure and modification;
+    h. Requiring individuals to take, and having devices implement, specific controls to protect authenticators; and
+    i. Changing authenticators for group or role accounts when membership to those accounts changes.
+- id: IA-5(1)
+  oscal_id: ia-5.1
+  family: Identification and Authentication
+  title: Password-based Authentication
+  text: |-
+    Control: IA-5(1) — Password-based Authentication.
+    For password-based authentication:
+    (a) Maintain a list of commonly-used, expected, or compromised passwords and update the list [organization-defined parameter: frequency] and when organizational passwords are suspected to have been compromised directly or indirectly;
+    (b) Verify, when users create or update passwords, that the passwords are not found on the list of commonly-used, expected, or compromised passwords in IA-5(1)(a);
+    (c) Transmit passwords only over cryptographically-protected channels;
+    (d) Store passwords using an approved salted key derivation function, preferably using a keyed hash;
+    (e) Require immediate selection of a new password upon account recovery;
+    (f) Allow user selection of long passwords and passphrases, including spaces and all printable characters;
+    (g) Employ automated tools to assist the user in selecting strong password authenticators; and
+    (h) Enforce the following composition and complexity rules: [organization-defined parameter: composition and complexity rules].
+- id: IA-6
+  oscal_id: ia-6
+  family: Identification and Authentication
+  title: Authentication Feedback
+  text: |-
+    Control: IA-6 — Authentication Feedback.
+    Obscure feedback of authentication information during the authentication process to protect the information from possible exploitation and use by unauthorized individuals.
+- id: AU-1
+  oscal_id: au-1
+  family: Audit and Accountability
+  title: Policy and Procedures
+  text: |-
+    Control: AU-1 — Policy and Procedures.
+    a. Develop, document, and disseminate to [organization-defined parameter: organization-defined personnel or roles]:
+    1. [organization-defined parameter: one or more of: organization-level; mission/business process-level; system-level] audit and accountability policy that:
+    (a) Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and
+    (b) Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and
+    2. Procedures to facilitate the implementation of the audit and accountability policy and the associated audit and accountability controls;
+    b. Designate an [organization-defined parameter: official] to manage the development, documentation, and dissemination of the audit and accountability policy and procedures; and
+    c. Review and update the current audit and accountability:
+    1. Policy [organization-defined parameter: frequency] and following [organization-defined parameter: events] ; and
+    2. Procedures [organization-defined parameter: frequency] and following [organization-defined parameter: events].
+- id: AU-2
+  oscal_id: au-2
+  family: Audit and Accountability
+  title: Event Logging
+  text: |-
+    Control: AU-2 — Event Logging.
+    a. Identify the types of events that the system is capable of logging in support of the audit function: [organization-defined parameter: event types];
+    b. Coordinate the event logging function with other organizational entities requiring audit-related information to guide and inform the selection criteria for events to be logged;
+    c. Specify the following event types for logging within the system: [organization-defined parameter: organization-defined event types (subset of the event types defined in AU-2a.) along with the frequency of (or situation requiring) logging for each identified event type];
+    d. Provide a rationale for why the event types selected for logging are deemed to be adequate to support after-the-fact investigations of incidents; and
+    e. Review and update the event types selected for logging [organization-defined parameter: frequency].
+- id: AU-3
+  oscal_id: au-3
+  family: Audit and Accountability
+  title: Content of Audit Records
+  text: |-
+    Control: AU-3 — Content of Audit Records.
+    Ensure that audit records contain information that establishes the following:
+    a. What type of event occurred;
+    b. When the event occurred;
+    c. Where the event occurred;
+    d. Source of the event;
+    e. Outcome of the event; and
+    f. Identity of any individuals, subjects, or objects/entities associated with the event.
+- id: AU-6
+  oscal_id: au-6
+  family: Audit and Accountability
+  title: Audit Record Review, Analysis, and Reporting
+  text: |-
+    Control: AU-6 — Audit Record Review, Analysis, and Reporting.
+    a. Review and analyze system audit records [organization-defined parameter: frequency] for indications of [organization-defined parameter: inappropriate or unusual activity] and the potential impact of the inappropriate or unusual activity;
+    b. Report findings to [organization-defined parameter: personnel or roles] ; and
+    c. Adjust the level of audit record review, analysis, and reporting within the system when there is a change in risk based on law enforcement information, intelligence information, or other credible sources of information.
+- id: CM-1
+  oscal_id: cm-1
+  family: Configuration Management
+  title: Policy and Procedures
+  text: |-
+    Control: CM-1 — Policy and Procedures.
+    a. Develop, document, and disseminate to [organization-defined parameter: organization-defined personnel or roles]:
+    1. [organization-defined parameter: one or more of: organization-level; mission/business process-level; system-level] configuration management policy that:
+    (a) Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and
+    (b) Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and
+    2. Procedures to facilitate the implementation of the configuration management policy and the associated configuration management controls;
+    b. Designate an [organization-defined parameter: official] to manage the development, documentation, and dissemination of the configuration management policy and procedures; and
+    c. Review and update the current configuration management:
+    1. Policy [organization-defined parameter: frequency] and following [organization-defined parameter: events] ; and
+    2. Procedures [organization-defined parameter: frequency] and following [organization-defined parameter: events].
+- id: CM-2
+  oscal_id: cm-2
+  family: Configuration Management
+  title: Baseline Configuration
+  text: |-
+    Control: CM-2 — Baseline Configuration.
+    a. Develop, document, and maintain under configuration control, a current baseline configuration of the system; and
+    b. Review and update the baseline configuration of the system:
+    1. [organization-defined parameter: frequency];
+    2. When required due to [organization-defined parameter: circumstances] ; and
+    3. When system components are installed or upgraded.
+- id: CM-6
+  oscal_id: cm-6
+  family: Configuration Management
+  title: Configuration Settings
+  text: |-
+    Control: CM-6 — Configuration Settings.
+    a. Establish and document configuration settings for components employed within the system that reflect the most restrictive mode consistent with operational requirements using [organization-defined parameter: common secure configurations];
+    b. Implement the configuration settings;
+    c. Identify, document, and approve any deviations from established configuration settings for [organization-defined parameter: system components] based on [organization-defined parameter: operational requirements] ; and
+    d. Monitor and control changes to the configuration settings in accordance with organizational policies and procedures.
+- id: CM-7
+  oscal_id: cm-7
+  family: Configuration Management
+  title: Least Functionality
+  text: |-
+    Control: CM-7 — Least Functionality.
+    a. Configure the system to provide only [organization-defined parameter: mission-essential capabilities] ; and
+    b. Prohibit or restrict the use of the following functions, ports, protocols, software, and/or services: [organization-defined parameter: organization-defined prohibited or restricted functions, system ports, protocols, software, and/or services].
