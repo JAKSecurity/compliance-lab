@@ -31,11 +31,19 @@ These limits are part of the experiment: the repository shows where identity, au
 
 The PASS path ends after the reporter summarizes a successful control check.
 
-![PASS path: validator checks a control and the reporter summarizes the result](docs/diagrams/pass-path.svg)
+<p align="center">
+  <a href="docs/diagrams/pass-path.svg">
+    <img src="docs/diagrams/pass-path.svg" alt="PASS path: validator checks a control and the reporter summarizes the result" width="400">
+  </a>
+</p>
 
 The FAIL path asks a human to approve or deny a simulated containment proposal.
 
-![FAIL path: validator flags a failure, reporter proposes containment, and a human approves or denies it](docs/diagrams/containment-path.svg)
+<p align="center">
+  <a href="docs/diagrams/containment-path.svg">
+    <img src="docs/diagrams/containment-path.svg" alt="FAIL path: validator flags a failure, reporter proposes containment, and a human approves or denies it" width="400">
+  </a>
+</p>
 
 ## Requirements
 
